@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\EstablishmentController;
+use App\Http\Controllers\ImageEstablishmentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StateController;
@@ -28,4 +29,8 @@ Route::get('type-establishment', [TypeEstablishmentController::class, 'onListAll
 
 Route::controller(EstablishmentController::class)->group(function() {
     Route::post('establishment', 'onCreate');
+});
+
+Route::controller(ImageEstablishmentController::class)->group(function() {
+    Route::post('establishment-image', 'OnCreate');
 });

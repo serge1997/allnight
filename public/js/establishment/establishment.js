@@ -38,22 +38,13 @@ $(document).ready(function() {
 
             })
     })
-
-    //create image
-    var images = [];
-    $('body #establishment-images').on('change', function(e) {
-        console.log(e.target.files.length);
-        for (let i = 0; i < e.target.files.length; i++) {
-            images.push(e.target.files[i])
-        }
-    })
     $('body #create-images').on('submit', function(e) {
         e.preventDefault()
-        let files = new FormData();
-        files.append('est_images', images);
-        Api.post('image', files)
+        const data = new FormData(this);
+        Api.post('establishment-image', data)
             .then((response) => {
-
+                console.log(response)
             })
+            .catch(err => console.log(err))
     })
 })
