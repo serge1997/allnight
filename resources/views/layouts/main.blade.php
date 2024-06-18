@@ -79,5 +79,6 @@
         <div class="mt-4"></div>
         @yield('content')
         @yield('script-src-js')
+        <script type="module" src="/js/main.js"></script>
     </body>
 </html>

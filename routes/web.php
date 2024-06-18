@@ -6,6 +6,7 @@ use App\Views\Auth\LoginView;
 use App\Views\Auth\RegisterEstablishmentView;
 use App\Views\Establishment\DashboardView;
 use App\Http\Controllers\AuthController;
+use App\Views\IndexView;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,9 +18,7 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [IndexView::class, 'index']);
 
 Route::get('/register', [RegisterView::class, 'index'])->name('auth.register')->middleware('guest');
 Route::get('/login', [LoginView::class, 'index'])->name('login')->middleware('guest');

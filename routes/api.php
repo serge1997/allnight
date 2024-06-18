@@ -33,4 +33,5 @@ Route::controller(EstablishmentController::class)->group(function() {
 
 Route::controller(ImageEstablishmentController::class)->group(function() {
     Route::post('establishment-image', 'OnCreate');
+    Route::get('establishment-image', 'OnListAll');
 });
